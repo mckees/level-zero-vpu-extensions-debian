@@ -1,0 +1,27 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+
+override_dh_install:
+ifeq ($(PREFIX),)
+    PREFIX := debian/tmp/usr/
+endif
+
+INSTALL_DIR := $(PREFIX)/include/level-zero/
+install: *.h
+	mkdir -p $(INSTALL_DIR)
+	cp -r *.h $(INSTALL_DIR)
+	chmod 755 $(INSTALL_DIR)
+	dh_install
+
+override_dh_auto_build:
+
+override_dh_clean:
+	sudo rm -rf debian/tmp
+	dh_clean
+
+override_dh_binary:
+
