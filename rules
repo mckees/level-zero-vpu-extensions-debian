@@ -10,7 +10,7 @@ ifeq ($(PREFIX),)
     PREFIX := debian/tmp/usr/
 endif
 
-INSTALL_DIR := $(PREFIX)/include/level-zero/
+INSTALL_DIR := $(PREFIX)/include/level_zero/
 install: *.h
 	mkdir -p $(INSTALL_DIR)
 	cp -r *.h $(INSTALL_DIR)
