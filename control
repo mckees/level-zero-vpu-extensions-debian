@@ -15,3 +15,5 @@ Architecture: amd64
 Multi-Arch: same
 Depends: ${shlibs:Depends}, ${misc:Depends},
 Description: This package contains the VPU level zero extension headers
+ No binaries or libraries included. This package is a dependency for the
+ linux-npu-driver.
